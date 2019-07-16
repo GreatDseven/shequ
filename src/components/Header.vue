@@ -1,11 +1,11 @@
 <template>
   <div class="header">
     <div class="header-inner">
-      <router-link to="/" class="logo">
+      <router-link :to="$publicUrl+'/'" class="logo">
         <img src="https://www.vue-js.com/public/images/vue.png" alt />
         <h1>Vue.js</h1>
       </router-link>
-      <router-link to="/topic/creat" v-if="userInfo">发布文章</router-link>
+      <router-link :to="$publicUrl+'/topic/creat'" v-if="userInfo">发布文章</router-link>
       <div v-if="!userInfo" class="login">
         <input type="text" v-model="text" />
         <button @click="login">登录</button>

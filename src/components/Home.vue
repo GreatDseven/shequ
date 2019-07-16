@@ -4,43 +4,43 @@
       <li>
         <router-link
           @click.native="total = 856"
-          :class=" $route.fullPath === '/' || $route.fullPath==='/?tab=all' ? 'active' : ''"
-          to="/?tab=all"
+          :class=" $route.fullPath ===$publicUrl+'/' || $route.fullPath===$publicUrl+'/?tab=all' ? 'active' : ''"
+          :to="$publicUrl+'/?tab=all'"
         >全部</router-link>
       </li>
       <li>
         <router-link
           @click.native="total = 15"
-          :class="$route.fullPath==='/?tab=good' ? 'active' : ''"
-          to="/?tab=good"
+          :class="$route.fullPath===$publicUrl+'/?tab=good' ? 'active' : ''"
+          :to="$publicUrl+'/?tab=good'"
         >精华</router-link>
       </li>
       <li>
         <router-link
           @click.native="total = 3"
-          :class="$route.fullPath==='/?tab=weex' ? 'active' : ''"
-          to="/?tab=weex"
+          :class="$route.fullPath===$publicUrl+'/?tab=weex' ? 'active' : ''"
+          :to="$publicUrl+'/?tab=weex'"
         >weex</router-link>
       </li>
       <li>
         <router-link
           @click.native="total = 247"
-          :class="$route.fullPath==='/?tab=share' ? 'active' : ''"
-          to="/?tab=share"
+          :class="$route.fullPath===$publicUrl+'/?tab=share' ? 'active' : ''"
+          :to="$publicUrl+'/?tab=share'"
         >分享</router-link>
       </li>
       <li>
         <router-link
           @click.native="total = 577"
-          :class="$route.fullPath==='/?tab=ask' ? 'active' : ''"
-          to="/?tab=ask"
+          :class="$route.fullPath===$publicUrl+'/?tab=ask' ? 'active' : ''"
+          :to="$publicUrl+'/?tab=ask'"
         >问答</router-link>
       </li>
       <li>
         <router-link
           @click.native="total = 30"
-          :class="$route.fullPath==='/?tab=job' ? 'active' : ''"
-          to="/?tab=job"
+          :class="$route.fullPath===$publicUrl+'/?tab=job' ? 'active' : ''"
+          :to="$publicUrl+'/?tab=job'"
         >招聘</router-link>
       </li>
     </ul>
@@ -56,7 +56,7 @@
             <span class="visit_count">{{topic.visit_count}}</span>
           </div>
           <span
-            v-if="$route.fullPath === '/' || $route.fullPath==='/?tab=all' || topic.top || topic.good"
+            v-if="$route.fullPath ===$publicUrl+ '/' || $route.fullPath==='/?tab=all' || topic.top || topic.good"
             :class="{tab: true,active: topic.top || topic.good}"
           >{{topic.top?'置顶': topic.good ? '精华': topic.tab === 'share'? '分享':topic.tab === 'ask'? '问答' : topic.tab === 'job'? '招聘' : 'weex' }}</span>
           <span class="title">
